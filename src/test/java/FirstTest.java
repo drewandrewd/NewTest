@@ -19,7 +19,7 @@ public class FirstTest {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
         action = new Actions(driver);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
