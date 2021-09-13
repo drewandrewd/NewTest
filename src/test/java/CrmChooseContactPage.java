@@ -10,9 +10,9 @@ public class CrmChooseContactPage {
     private WebDriver driver;
     private Actions actions;
 
-    private final String openMenu = "//*[@id=\\\"main-menu\\\"]/ul/li[1]/a/span";
+    private final String openMenu = "//*[@id=\"main-menu\"]/ul/li[1]/a/span";
 
-    @FindBy(xpath = "//*[@id=\\\"main-menu\\\"]/ul/li[1]/ul/li[4]/a/span")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[1]/ul/li[4]/a/span")
     private WebElement contactButton;
 
     public CrmChooseContactPage(WebDriver driver, Actions actions) {

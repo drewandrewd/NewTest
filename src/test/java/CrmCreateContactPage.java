@@ -7,7 +7,7 @@ public class CrmCreateContactPage {
 
     private WebDriver driver;
 
-    @FindBy(xpath = "//*[@id=\\\"container\\\"]/div[1]/div/div/div[2]/div/div/a")
+    @FindBy(xpath = "//*[@id=\"container\"]/div[1]/div/div/div[2]/div/div/a")
     private WebElement createContactButton;
 
     public CrmCreateContactPage(WebDriver driver) {

@@ -1,7 +1,5 @@
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -12,6 +10,10 @@ public class SecondTest {
 
     private WebDriver driver;
     private Actions action;
+    private CrmLoginPage pageOne;
+    private CrmChooseContactPage pageTwo;
+    private CrmCreateContactPage pageThree;
+    private CrmMyContactPage pageFour;
 
     @Before
     public void setUp() {
@@ -19,37 +21,35 @@ public class SecondTest {
         driver = new ChromeDriver();
         action = new Actions(driver);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        pageOne = new CrmLoginPage(driver);
+        pageTwo = new CrmChooseContactPage(driver, action);
+        pageThree = new CrmCreateContactPage(driver);
+        pageFour = new CrmMyContactPage(driver);
     }
 
     @Test
     public void test() { //Login
-        try {
-            driver.get("https://crm.geekbrains.space/user/login");
-            Assertions.assertTrue(driver.findElement(By.className("title")).isDisplayed());
-            driver.findElement(By.id("prependedInput")).click();
-            driver.findElement(By.id("prependedInput")).sendKeys("Applanatest1");
-            driver.findElement(By.id("prependedInput2")).click();
-            driver.findElement(By.id("prependedInput2")).sendKeys("Student2020!");
-            driver.findElement(By.id("_submit")).click();
-            action
-                    .moveToElement(driver.findElement(By.xpath("//*[@id=\"main-menu\"]/ul/li[1]/a/span")))
-                    .build()
-                    .perform();
-            driver.findElement(By.xpath("//*[@id=\"main-menu\"]/ul/li[1]/ul/li[4]/a/span")).click();
-            driver.findElement(By.xpath("//*[@id=\"container\"]/div[1]/div/div/div[2]/div/div/a")).click();
-            //Create contact
-            Assertions.assertTrue(driver.findElement(By.className("user-fieldset")).isDisplayed());
-            driver.findElement(By.name("crm_contact[lastName]")).click();
-            driver.findElement(By.name("crm_contact[lastName]")).sendKeys("Drew");
-            driver.findElement(By.name("crm_contact[firstName]")).click();
-            driver.findElement(By.name("crm_contact[firstName]")).sendKeys("Name");
-            driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[3]/form/div[2]/div[3]/div/div[1]/div[2]/fieldset/div[2]/div[1]/div[2]/div/div[1]/a/span[2]")).click();
-            driver.findElement(By.xpath("//*[@id=\"select2-drop\"]/ul[2]/li[1]/div")).click();
-            driver.findElement(By.name("crm_contact[jobTitle]")).click();
-            driver.findElement(By.name("crm_contact[jobTitle]")).sendKeys("QA");
-            driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[3]/form/div[1]/div/div/div[2]/div[1]/div[4]/button")).click();
-        } catch (AssertionError e) {
-            System.out.println(e);
-        }
+        //Login
+        pageOne.getPage("https://crm.geekbrains.space/user/login");
+        pageOne.clickLoginInput();
+        pageOne.sendKeysLoginInput("Applanatest1");
+        pageOne.clickPasswordInput();
+        pageOne.sendKeysPasswordInput("Student2020!");
+        pageOne.clickSubmitLoginButton();
+        //Choose contact page
+        pageTwo.doSomeAction();
+        pageTwo.clickContactButton();
+        //Create contact
+        pageThree.clickCreateContact();
+        //Contact page
+        pageFour.lastNameClick();
+        pageFour.lastNameSend("Dre");
+        pageFour.firstNameClick();
+        pageFour.firstNameSend("Nam");
+        pageFour.organisationListClick();
+        pageFour.organisationChoose();
+        pageFour.jobTitleClick();
+        pageFour.jobTitleSend("QA");
+        pageFour.submitButtonClick();
     }
 }

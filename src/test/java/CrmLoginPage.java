@@ -16,7 +16,7 @@ public class CrmLoginPage {
     @FindBy(id = "prependedInput2")
     private WebElement passwordInput;
 
-    @FindBy(id = "submit")
+    @FindBy(id = "_submit")
     private WebElement submitLoginButton;
 
     public CrmLoginPage(WebDriver driver) {
@@ -24,8 +24,8 @@ public class CrmLoginPage {
         PageFactory.initElements(driver, this);
     }
 
-    public String getLoginTitle() {
-        return loginTitle.getText();
+    public void getPage(String text) {
+        driver.get(text);
     }
 
     public CrmLoginPage clickLoginInput() {

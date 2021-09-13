@@ -26,13 +26,13 @@ public class CrmMyProjectPage {
     @FindBy(css = ".select2-default > .select2-arrow")
     private WebElement organisationChosen;
 
-    @FindBy(xpath = "//*[@id=\\\"select2-drop\\\"]/ul[2]/li[1]/div")
+    @FindBy(xpath = "//*[@id=\"select2-drop\"]/ul[2]/li[1]/div")
     private WebElement organisationList;
 
     @FindBy(xpath = "/html/body/div[2]/div/div[2]/div[3]/form/div[2]/div[3]/div/div[1]/div[2]/fieldset/div[4]/div[1]/div[2]/div/a/span[2]")
     private WebElement contactChosen;
 
-    @FindBy(xpath = "//*[@id=\\\"select2-drop\\\"]/ul[2]/li[1]/div")
+    @FindBy(xpath = "//*[@id=\"select2-drop\"]/ul[2]/li[1]/div")
     private WebElement contact;
 
     @FindBy(css = ".btn-group:nth-child(4) > .btn")

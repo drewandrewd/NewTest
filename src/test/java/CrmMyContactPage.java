@@ -16,7 +16,7 @@ public class CrmMyContactPage {
     @FindBy(xpath = "/html/body/div[2]/div/div[2]/div[3]/form/div[2]/div[3]/div/div[1]/div[2]/fieldset/div[2]/div[1]/div[2]/div/div[1]/a/span[2]")
     private WebElement organisationList;
 
-    @FindBy(xpath = "//*[@id=\\\"select2-drop\\\"]/ul[2]/li[1]/div")
+    @FindBy(xpath = "//*[@id=\"select2-drop\"]/ul[2]/li[1]/div")
     private WebElement organisationChosen;
 
     @FindBy(name = "crm_contact[jobTitle]")
