@@ -1,9 +1,5 @@
 package Crm;
 
-import Crm.CrmChooseContactPage;
-import Crm.CrmCreateContactPage;
-import Crm.CrmLoginPage;
-import Crm.CrmMyContactPage;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;

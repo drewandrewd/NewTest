@@ -1,9 +1,5 @@
 package Crm;
 
-import Crm.CrmChooseProjectPage;
-import Crm.CrmCreateProjectPage;
-import Crm.CrmLoginPage;
-import Crm.CrmMyProjectPage;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
