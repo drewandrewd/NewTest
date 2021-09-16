@@ -1,3 +1,5 @@
+package Crm;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -5,17 +7,17 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CrmChooseProjectPage {
+public class CrmChooseContactPage {
 
     private WebDriver driver;
     private Actions actions;
 
-    private final String openMenu = "//*[@id=\"main-menu\"]/ul/li[3]/a/span";
+    private final String openMenu = "//*[@id=\"main-menu\"]/ul/li[1]/a/span";
 
-    @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[3]/ul/li[4]/a")
-    private WebElement myProjectsButton;
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[1]/ul/li[4]/a/span")
+    private WebElement contactButton;
 
-    public CrmChooseProjectPage(WebDriver driver, Actions actions) {
+    public CrmChooseContactPage(WebDriver driver, Actions actions) {
         this.driver = driver;
         this.actions = actions;
         PageFactory.initElements(driver, this);
@@ -28,8 +30,8 @@ public class CrmChooseProjectPage {
                 .perform();
     }
 
-    public CrmChooseProjectPage clickMyProjectsButton() {
-        myProjectsButton.click();
+    public CrmChooseContactPage clickContactButton() {
+        contactButton.click();
         return this;
     }
 }

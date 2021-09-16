@@ -1,3 +1,6 @@
+package Project;
+
+import Project.NotePage;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
