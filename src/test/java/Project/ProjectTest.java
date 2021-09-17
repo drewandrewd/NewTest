@@ -1,11 +1,15 @@
 package Project;
 
+import io.qameta.allure.Description;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -24,7 +28,10 @@ public class ProjectTest {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
+
     @Test
+    @DisplayName(value = "Тест блокнота")
+    @Description(value = "Тест проверяет правильность ввода текста в блокнот")
     public void putSomeText() {
         try {
             page.getPage("https://online-bloknot.ru/");
